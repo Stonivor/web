@@ -17,10 +17,23 @@
     // Grab any UTM parameters from the current URL
     const params = window.location.search;
 
+    // Grab any UTM parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get('utm_source') || 'unknown';
+    const medium = urlParams.get('utm_medium') || 'unknown';
+    const campaign = urlParams.get('utm_campaign') || 'unknown';
+
+    // Send custom event to GA with UTMs
+    gtag('event', 'redirect_visit', {
+      utm_source: source,
+      utm_medium: medium,
+      utm_campaign: campaign
+    });
+    
     // Destination LinkedIn URL
     const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/';
 
-    // Auto-redirect after 1 second delay
+    // Auto-redirect after 2 second delay
     setTimeout(() => {
       window.location.href = linkedInBase + params;
     }, 2000);
