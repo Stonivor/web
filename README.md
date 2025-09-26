@@ -1,1 +1,19 @@
-# web
+
+<html>
+  <head>
+    <title>Redirecting to LinkedIn...</title>
+    <!-- Google tag (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H317R33606"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H317R33606');
+    </script>
+    <meta http-equiv="refresh" content="1;url=https://www.linkedin.com/in/laurent-ngo/" />
+  </head>
+  <body>
+    <p>Redirecting you to LinkedIn… If not, <a href="https://www.linkedin.com/in/laurent-ngo/">click here</a>.</p>
+
+  </body>
+</html>
