@@ -2,23 +2,29 @@
 <html>
   <head>
     <title>Redirecting to LinkedIn...</title>
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H317R33606"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H317R33606');
-</script>
-
-
-    <meta http-equiv="refresh" content="1;url=https://www.linkedin.com/in/laurent-ngo/" />
+    <!-- Google tag (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H317R33606"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H317R33606');
+    </script>
+    
+    <script>
+    // Get current URL params
+    const params = window.location.search;
+    // Redirect to LinkedIn with same params
+    const linkedInURL = 'https://www.linkedin.com/in/laurent-ngo/' + params;
+    setTimeout(() => {
+      window.location.href = linkedInURL;
+    }, 500);
+  </script>
   </head>
   <body>
-    <p>Redirecting you to LinkedIn… If not, <a href="https://www.linkedin.com/in/laurent-ngo/">click here</a>.</p>
-
+  <script>
+    // Update clickable link with params
+    document.getElementById('redirectLink').href = 'https://www.linkedin.com/in/laurent-ngo/' + window.location.search;
+  </script>
   </body>
 </html>
