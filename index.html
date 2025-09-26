@@ -10,7 +10,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-H317R33606'); // <-- Replace with your GA4 Measurement ID
+    gtag('config', 'G-H317R33606');
   </script>
 
   <script>
@@ -18,24 +18,24 @@
     const params = window.location.search;
 
     // Destination LinkedIn URL
-    const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/'; // <-- Replace with your LinkedIn
+    const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/';
 
-    // Auto-redirect after short delay (2 seconds)
-    //setTimeout(() => {
-    //  window.location.href = linkedInBase + params;
-    //}, 2000);
+    // Auto-redirect after 1 second delay
+    setTimeout(() => {
+      window.location.href = linkedInBase + params;
+    }, 5000);
   </script>
 </head>
 <body>
   <div style="text-align:center; margin-top:50px; font-family:Arial, sans-serif;">
     <h2>Redirecting you to LinkedIn…</h2>
-    <p>If nothing happens in a few seconds, click the link below:</p>
+    <p>If nothing happens, click the link below:</p>
     <a id="redirectLink" href="#" style="font-size:18px; color:#0077b5; text-decoration:none;">Go to LinkedIn</a>
   </div>
 
   <script>
     // Update fallback link with UTM parameters
-    const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/'; // <-- Replace with your LinkedIn
+    const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/';
     document.getElementById('redirectLink').href = linkedInBase + window.location.search;
   </script>
 </body>
