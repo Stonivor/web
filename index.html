@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Redirecting to LinkedIn...</title>
-    <!-- Google tag (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H317R33606"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-H317R33606');
-    </script>
-    
-    <script>
-    // Get current URL params
-    const params = window.location.search;
-    // Redirect to LinkedIn with same params
-    const linkedInURL = 'https://www.linkedin.com/in/laurent-ngo/' + params;
-    setTimeout(() => {
-      window.location.href = linkedInURL;
-    }, 500);
-  </script>
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H317R33606"></script>
   <script>
-    // Update clickable link with params
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    // Fire GA with current page including UTM
+    gtag('config', 'G-H317R33606');
+    
+    // Grab current URL search params (UTMs)
+    const params = window.location.search;
+    
+    // Delay redirect so GA can register the session
+    setTimeout(() => {
+      window.location.href = 'https://www.linkedin.com/in/laurent-ngo/' + params;
+    }, 2000);
+  </script>
+</head>
+<body>
+  <p>Redirecting to LinkedIn… if not, <a id="redirectLink" href="#">click here</a>.</p>
+
+  <script>
+    // Update link with same UTMs
     document.getElementById('redirectLink').href = 'https://www.linkedin.com/in/laurent-ngo/' + window.location.search;
   </script>
-  </body>
+</body>
 </html>
