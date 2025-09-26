@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Redirecting...</title>
+  <title>Redirecting to LinkedIn...</title>
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H317R33606"></script>
@@ -10,25 +10,33 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    
-    // Fire GA with current page including UTM
-    gtag('config', 'G-H317R33606');
-    
-    // Grab current URL search params (UTMs)
+    gtag('config', 'G-H317R33606'); // <-- Replace with your GA4 Measurement ID
+  </script>
+
+  <script>
+    // Grab any UTM parameters from the current URL
     const params = window.location.search;
-    
-    // Delay redirect so GA can register the session
+
+    // Destination LinkedIn URL
+    const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/'; // <-- Replace with your LinkedIn
+
+    // Auto-redirect after short delay (0.5 seconds)
     setTimeout(() => {
-      window.location.href = 'https://www.linkedin.com/in/laurent-ngo/' + params;
-    }, 2000);
+      window.location.href = linkedInBase + params;
+    }, 500);
   </script>
 </head>
 <body>
-  <p>Redirecting to LinkedIn… if not, <a id="redirectLink" href="#">click here</a>.</p>
+  <div style="text-align:center; margin-top:50px; font-family:Arial, sans-serif;">
+    <h2>Redirecting you to LinkedIn…</h2>
+    <p>If nothing happens in a few seconds, click the link below:</p>
+    <a id="redirectLink" href="#" style="font-size:18px; color:#0077b5; text-decoration:none;">Go to LinkedIn</a>
+  </div>
 
   <script>
-    // Update link with same UTMs
-    document.getElementById('redirectLink').href = 'https://www.linkedin.com/in/laurent-ngo/' + window.location.search;
+    // Update fallback link with UTM parameters
+    const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/'; // <-- Replace with your LinkedIn
+    document.getElementById('redirectLink').href = linkedInBase + window.location.search;
   </script>
 </body>
 </html>
