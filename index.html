@@ -35,7 +35,7 @@
 
     // Auto-redirect after 1 second delay
     setTimeout(() => {
-      window.location.href = linkedInBase + params;
+      window.location.href = linkedInBase;
     }, 1000);
   </script>
 </head>
@@ -49,7 +49,7 @@
   <script>
     // Update fallback link with UTM parameters
     const linkedInBase = 'https://www.linkedin.com/in/laurent-ngo/';
-    document.getElementById('redirectLink').href = linkedInBase + window.location.search;
+    document.getElementById('redirectLink').href = linkedInBase;
   </script>
 </body>
 </html>
